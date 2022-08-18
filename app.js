@@ -76,7 +76,7 @@ div.innerHTML = `
 <div class="card mt-3 mx-auto" style="max-width:1000px">
 <div class="row g-0">
   <div class="col-md-4">
-    <img src="${transport.imageUrl}" class="img-fluid rounded h-100" alt="...">
+    <img src="${transport.imageUrl}" class="img-fluid rounded-4 h-100 p-2" alt="...">
   </div>
   <div class="col-md-8">
     <div class="card-body">
@@ -93,16 +93,13 @@ div.innerHTML = `
 </div>
 </div>
 
-
 `
 
 mainContainer.appendChild(div);
 
 }
 
-// travelServices(carObject);
-// travelServices(busObject);
-// travelServices(bikeObject)
+//Passing objects to add the card section to the website
 function displayAllServices(services){
 for(let i = 0; i < services.length;i++)
 {
@@ -114,6 +111,9 @@ for(let i = 0; i < services.length;i++)
 
 displayAllServices(arrServices);
 
+
+
+//Function used to show the modal onclick book now button
 function handleBooking(obj){
   const modalBody = document.getElementById('modal-body');
   const stringifiedObj = JSON.stringify(obj);
@@ -137,10 +137,11 @@ function handleBooking(obj){
 </div>
 `
 
-//Calculate Total Fare
+
 
 }
 
+//Calculate Total Fare
 function calculateCost(obj){
   console.log(obj);
     const distanceInput = document.getElementById('distance').value;
@@ -155,6 +156,7 @@ function calculateCost(obj){
   }
 
 
+//showing the search 
 document.getElementById('btn-search').addEventListener('click',function(){
   const searchValue = document.getElementById('search-content').value;
 
