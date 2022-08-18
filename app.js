@@ -149,10 +149,19 @@ function calculateCost(obj){
   
     console.log(distanceInput,vehicleQuantity);
     const totalFare = distanceInput * vehicleQuantity * obj.farePerKilo;
+
+    // console.log(totalFare)
   
-    document.getElementById('fare-total').innerText = totalFare;
+    document.getElementById('fare-total').innerText = parseFloat(totalFare);
+
+    const totalTax = parseFloat((totalFare * 5/100).toFixed(2));
+
+    // console.log(totalTax)
+
+    document.getElementById('tax-total').innerHTML = totalTax; 
   
-    document.getElementById('total-cost').innerText = totalFare;    
+    document.getElementById('total-cost').innerText = (totalFare + totalTax);    
+
   }
 
 
